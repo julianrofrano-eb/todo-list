@@ -19,4 +19,8 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^tasks/', include('app.urls')),
     url(r'^admin/', admin.site.urls),
+    url(r'^user/', include('login.urls')),
+    url(r'^events/', include('events.urls')),
+    url('', include('social_django.urls', namespace='social'))
+
 ]

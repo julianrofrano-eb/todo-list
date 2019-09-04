@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load bootstrap3 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}  
+{% bootstrap_javascript jquery='full' %} 
+
+{% block title %}Home{% endblock title %}
+{% block nav-style %}mkt-nav{% endblock nav-style %}
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+
+    </div>
+    <div class="col-md-4">
+        <h2 class="text-center">Login</h2>
+        <div class="text-center well">
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-info">Login</button>
+              </form>
+              <br>
+              <a class="btn btn-danger" style="background-color: #d1410c" href="{% url "social:begin" "eventbrite" %}">Log In with Eventbrite</a>
+
+        </div>
+
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,90 @@
+{# HTML5 declaration #}
+<!DOCTYPE html>
+<html>
+    <head>
+        {% load bootstrap3 %}
+        {% bootstrap_css %}
+        {% bootstrap_javascript jquery=1 %} 
+        {% load static %}
+        <script type="text/javascript" src='{% static 'jquery/dist/jquery.js' %}'></script>
+        <script type="text/javascript" src='{% static 'jquery-ui/jquery-ui.min.js' %}'></script>
+        <title>{% block title %}Home {% endblock title %} | EB Event TO-DO</title>
+        {% block head_favicon %}
+            <link rel="icon" type="image/png"
+                  href="{{ STATIC_URL }}images/favicon.ico">
+        {% endblock head_favicon %}
+        {% block head_meta %}
+            {% block head_meta_charset %}
+                <meta http-equiv="Content-Type"
+                      content="text/html; charset=utf-8" />
+            {% endblock head_meta_charset %}
+            {% block head_meta_contentlanguage %}
+                <meta http-equiv="Content-Language" value="en-US" />
+            {% endblock head_meta_contentlanguage %}
+            {% block head_meta_viewport %}
+                <meta name="viewport"
+                      content="width=device-width, initial-scale=1.0">
+            {% endblock head_meta_viewport %}
+        {% endblock head_meta %}
+    </head>
+    <body>
+            {# Navigation Menu #}
+            <header>
+                <div class="navbar navbar-default navbar-static-top 
+                {% block nav-style %}{% endblock %}">
+                    <div class="container p-none">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle"
+                                    data-toggle="collapse"
+                                    data-target=".navbar-collapse">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="/">EB Event TO-DO</a>
+                        </div>
+                        <ul class="nav navbar-nav">
+                                {% if user.is_authenticated %}
+                            <li><a href="{% url 'event-list' %}">My Events</a></li>
+                            {% endif %}
+                        </ul>
+                        <div class="collapse navbar-collapse">
+                            <ul class="nav navbar-nav navbar-right">
+                                {% if user.is_authenticated %}
+                                <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> {% bootstrap_icon "user" %} {{ user }} <span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                          <li><a href="{% url 'user-change-pass' %}">Change Password</a></li>
+                                          <li role="separator" class="divider"></li>
+                                          <li><a href="{% url 'user-logout' %}">{% bootstrap_icon "log-out" %} Log Out</a></li>
+                                        </ul>
+                                      </li>
+                                {% else %}
+                                    <li><a href="{% url 'user-login' %}">Login</a></li>
+                                    <li><a href="" class="p-r-none">Sign Up</a></li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            {# The Document Body #}
+            <div id="site-wrapper">
+                {% block content %}
+                    if you see this, something is wrong!
+                {% endblock content %}
+            </div>
+            {# The Footer #}
+            <div class="footer">
+                <div class="container">
+                    <p>EDA EVENTBRITE</p>
+                </div>
+            </div>
+        </body>
+        {% block footer_javascript %}
+        {% block footer_javascript_site %}
+        {% endblock footer_javascript_site %}
+        {% block footer_javascript_section %}{% endblock footer_javascript_section %}
+        {% block footer_javascript_page %}{% endblock footer_javascript_page %}
+    {% endblock footer_javascript %}
+</html>

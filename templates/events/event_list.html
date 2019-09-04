@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load bootstrap3 %}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery=1 %} 
+{% block title %}Home{% endblock title %}
+{% block nav-style %}mkt-nav{% endblock nav-style %}
+{% block extra_head %}
+{% endblock %}
+{% block content %}
+{% block body %}
+
+{% endblock %}
+<div class="container">
+    <div class="col-md-12">
+        <div class="row">
+            <h2>My Events</h2>
+            {% if events.events %}
+            {% for event in events.events %}
+            <div class="col-md-6">
+                    <div class="well">
+                            <h3> {{ event.name.text }} </h3>
+                            <p>{% bootstrap_icon "calendar" %} from: {{ event.start.local }} to {{ event.end.local }}</p>
+                            <p>{% bootstrap_icon "user" %} {{ event.capacity }}</p>
+                            {% if not event.description %}
+                            <p><small>Sin descripcion</small></p>
+                            {% endif %}
+                            {% if event.description %}
+                            <p><small>{{ event.description.text }}</small></p>
+                            {% endif %}
+                            <h4>Pending tasks</h4>
+                            {% if event.tasks %}
+                            {% for task in event.tasks %}
+                            {% if task.priority.name == 'URGENT' %}
+                            <span class="label label-danger">{{task.name}}</span>
+                            {% endif %}
+                            {% if task.priority.name == 'LOW' %}
+                            <span class="label label-success">{{task.name}}</span>
+                            {% endif %}
+                            {% if task.priority.name == 'NORMAL' %}
+                            <span class="label label-warning">{{task.name}}</span>
+                            {% endif %}
+                            {% endfor %}
+                            {% endif %}
+                            <p>
+                                {% if not event.tasks %}
+                                  <p class="text-muted">No pending tasks... Enjoy your day</p>
+                                  {% endif %}
+                                <br>
+                            <span><a class="btn btn-info" role="button" href="{{ event.url }}"> {% bootstrap_icon "link" %} Go to event</a></span>
+                            <span><a class="btn btn-warning" role="button" href="{% url 'list-tasks-event' event.id %}"> {% bootstrap_icon "tasks" %} All tasks</a></span>
+                            <span><a class="btn btn-success" role="button" href="{% url 'task-create-event' event.id %}"> {% bootstrap_icon "plus" %} New task</a></span>
+                            </p>
+                    </div>
+            </div>
+
+            {% endfor %}
+            {% endif %}
+        </div>
+        {% if not events.events %}
+        <div class="alert alert-danger" role="alert">
+            No events created.
+              <a href="https://www.eventbrite.com/manage/events/create" class="alert-link">create one?</a>
+            </div>
+          {% endif %}
+    </div>
+
+</div>
+{% endblock %}

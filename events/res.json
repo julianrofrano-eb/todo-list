@@ -1,0 +1,192 @@
+{
+    "pagination": {
+        "object_count": 3, 
+        "page_number": 1, 
+        "page_size": 10, 
+        "page_count": 1, 
+        "has_more_items": false
+    }, 
+    "events": [
+        {
+            "name": {
+                "text": "Curso martes y jueves prueba", 
+                "html": "Curso martes y jueves prueba"
+            }, 
+            "description": {
+                "text": "Martes y jueves de 17 a 20", 
+                "html": "Martes y jueves de 17 a 20"
+            }, 
+            "url": "https://www.eventbrite.com/e/curso-martes-y-jueves-prueba-tickets-68610673371", 
+            "start": {
+                "timezone": "America/Argentina/Mendoza", 
+                "local": "2019-09-01T17:00:00", 
+                "utc": "2019-09-01T20:00:00Z"
+            }, 
+            "end": {
+                "timezone": "America/Argentina/Mendoza", 
+                "local": "2019-09-29T19:00:00", 
+                "utc": "2019-09-29T22:00:00Z"
+            }, 
+            "organization_id": "323344152339", 
+            "created": "2019-08-09T14:36:22Z", 
+            "changed": "2019-08-09T14:37:34Z", 
+            "capacity": 10, 
+            "capacity_is_custom": false, 
+            "status": "draft", 
+            "currency": "ARS", 
+            "listed": true, 
+            "shareable": false, 
+            "invite_only": false, 
+            "online_event": false, 
+            "show_remaining": false, 
+            "tx_time_limit": 480, 
+            "hide_start_date": false, 
+            "hide_end_date": true, 
+            "locale": "en_US", 
+            "is_locked": false, 
+            "privacy_setting": "unlocked", 
+            "is_series": false, 
+            "is_series_parent": false, 
+            "inventory_type": "limited", 
+            "is_reserved_seating": false, 
+            "show_pick_a_seat": false, 
+            "show_seatmap_thumbnail": false, 
+            "show_colors_in_seatmap_thumbnail": false, 
+            "source": "coyote", 
+            "is_free": false, 
+            "version": "3.7.0", 
+            "summary": "Martes y jueves de 17 a 20", 
+            "logo_id": null, 
+            "organizer_id": "26147436739", 
+            "venue_id": "35863705", 
+            "category_id": "118", 
+            "subcategory_id": null, 
+            "format_id": "9", 
+            "id": "68610673371", 
+            "resource_uri": "https://www.eventbriteapi.com/v3/events/68610673371/", 
+            "is_externally_ticketed": false, 
+            "logo": null
+        }, 
+        {
+            "name": {
+                "text": "Descuentalia prueba", 
+                "html": "Descuentalia prueba"
+            }, 
+            "description": {
+                "text": "Descuentos para todos", 
+                "html": "Descuentos para todos"
+            }, 
+            "url": "https://www.eventbrite.com/e/descuentalia-prueba-tickets-68295645113", 
+            "start": {
+                "timezone": "America/Argentina/Mendoza", 
+                "local": "2019-09-16T19:00:00", 
+                "utc": "2019-09-16T22:00:00Z"
+            }, 
+            "end": {
+                "timezone": "America/Argentina/Mendoza", 
+                "local": "2019-09-16T22:00:00", 
+                "utc": "2019-09-17T01:00:00Z"
+            }, 
+            "organization_id": "323344152339", 
+            "created": "2019-08-07T17:20:44Z", 
+            "changed": "2019-08-08T13:26:24Z", 
+            "published": "2019-08-07T17:49:16Z", 
+            "capacity": 400, 
+            "capacity_is_custom": false, 
+            "status": "live", 
+            "currency": "ARS", 
+            "listed": false, 
+            "shareable": false, 
+            "invite_only": true, 
+            "online_event": false, 
+            "show_remaining": false, 
+            "tx_time_limit": 480, 
+            "hide_start_date": false, 
+            "hide_end_date": false, 
+            "locale": "en_US", 
+            "is_locked": false, 
+            "privacy_setting": "unlocked", 
+            "is_series": false, 
+            "is_series_parent": false, 
+            "inventory_type": "limited", 
+            "is_reserved_seating": false, 
+            "show_pick_a_seat": false, 
+            "show_seatmap_thumbnail": false, 
+            "show_colors_in_seatmap_thumbnail": false, 
+            "source": "coyote", 
+            "is_free": false, 
+            "version": "3.7.0", 
+            "summary": "Descuentos para todos", 
+            "logo_id": null, 
+            "organizer_id": "26147436739", 
+            "venue_id": "35710343", 
+            "category_id": "101", 
+            "subcategory_id": null, 
+            "format_id": "100", 
+            "id": "68295645113", 
+            "resource_uri": "https://www.eventbriteapi.com/v3/events/68295645113/", 
+            "is_externally_ticketed": false, 
+            "logo": null
+        }, 
+        {
+            "name": {
+                "text": "Multiubicacion prueba", 
+                "html": "Multiubicacion prueba"
+            }, 
+            "description": {
+                "text": null, 
+                "html": null
+            }, 
+            "url": "https://www.eventbrite.com/e/multiubicacion-prueba-tickets-68591520083", 
+            "start": {
+                "timezone": "America/Argentina/Mendoza", 
+                "local": "2019-09-18T19:00:00", 
+                "utc": "2019-09-18T22:00:00Z"
+            }, 
+            "end": {
+                "timezone": "America/Argentina/Mendoza", 
+                "local": "2019-09-18T22:00:00", 
+                "utc": "2019-09-19T01:00:00Z"
+            }, 
+            "organization_id": "323344152339", 
+            "created": "2019-08-09T10:50:14Z", 
+            "changed": "2019-08-09T10:51:07Z", 
+            "capacity": 0, 
+            "capacity_is_custom": false, 
+            "status": "draft", 
+            "currency": "ARS", 
+            "listed": false, 
+            "shareable": false, 
+            "invite_only": false, 
+            "online_event": false, 
+            "show_remaining": false, 
+            "tx_time_limit": 480, 
+            "hide_start_date": true, 
+            "hide_end_date": true, 
+            "locale": "en_US", 
+            "is_locked": false, 
+            "privacy_setting": "unlocked", 
+            "is_series": false, 
+            "is_series_parent": false, 
+            "inventory_type": "limited", 
+            "is_reserved_seating": false, 
+            "show_pick_a_seat": false, 
+            "show_seatmap_thumbnail": false, 
+            "show_colors_in_seatmap_thumbnail": false, 
+            "source": "coyote", 
+            "is_free": true, 
+            "version": "3.7.0", 
+            "summary": null, 
+            "logo_id": null, 
+            "organizer_id": "26147436739", 
+            "venue_id": "35850877", 
+            "category_id": "113", 
+            "subcategory_id": null, 
+            "format_id": "19", 
+            "id": "68591520083", 
+            "resource_uri": "https://www.eventbriteapi.com/v3/events/68591520083/", 
+            "is_externally_ticketed": false, 
+            "logo": null
+        }
+    ]
+}

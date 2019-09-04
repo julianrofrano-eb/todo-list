@@ -1,7 +1,25 @@
+{% extends 'base.html' %}
+{% load bootstrap3 %}
+
+{% block title %}Home{% endblock title %}
+{% block nav-style %}mkt-nav{% endblock nav-style %}
 {% block content %}
-<form method="post">
-   {% csrf_token %}
-   {{ form }}
-   <input type="submit" value="Submit" />
-</form>
+{{ form.media }}      
+<div class="container">
+    <div class="row">
+            <div class="col-md-6">
+                    <h4>New Task</h4>
+                    <form method="post" class="form">
+                       {% csrf_token %}
+                       {% bootstrap_form form %}
+                       {% buttons %}
+                           <button type="submit" class="btn btn-primary">
+                                Submit
+                           </button>
+                       {% endbuttons %}
+                    </form>
+                    </div>
+    </div>
+</div>    
+
 {% endblock %}

@@ -11,7 +11,8 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
-
+from app.__init__ import get_env_variable
+PROJECT_PATH = os.path.realpath(os.path.dirname(__file__))
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -37,7 +38,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'app'
+    'app',
+    'bootstrap3',
+    'login',
+    'events',
+    'bootstrap_datepicker_plus',
+    'social_django',
+    'django_tables2',
+    'djangobower',
+    'schedule',
+
 ]
 
 MIDDLEWARE = [
@@ -63,6 +73,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect',
             ],
         },
     },
@@ -119,3 +131,34 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_FINDERS = {
+    'djangobower.finders.BowerFinder',
+}
+STATIC_ROOT = os.path.join(PROJECT_PATH, 'static')
+
+BOWER_COMPONENTS_ROOT = '/Users/julian.rofrano/eventbrite/todolisteb/todolist/components'
+
+BOWER_INSTALLED_APPS = (
+    'jquery',
+    'jquery-ui',
+    'bootstrap',
+    'fullcalendar'
+)
+
+BOOTSTRAP3 = {
+    'include_jquery': True,
+}
+
+LOGIN_REDIRECT_URL = '/events/'
+LOGOUT_REDIRECT_URL = '/user/login/'
+LOGIN_URL = '/user/login/'
+
+SOCIAL_AUTH_EVENTBRITE_KEY = get_env_variable('SOCIAL_AUTH_EVENTBRITE_KEY')
+SOCIAL_AUTH_EVENTBRITE_SECRET = get_env_variable(
+    'SOCIAL_AUTH_EVENTBRITE_SECRET',
+)
+
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.eventbrite.EventbriteOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+)

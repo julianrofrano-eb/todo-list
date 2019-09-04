@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% load bootstrap3 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}  
+{% bootstrap_javascript jquery='full' %} 
+
+{% block title %}Home{% endblock title %}
+{% block nav-style %}mkt-nav{% endblock nav-style %}
+{% block content %}
+<div class="container">
+    <div class="col-md-12">
+        <h2>{{ event.name.text }}</h2>
+        <div class="row">
+        </div>
+    </div>
+</div>
+<div class="container">
+        <div class="col-md-12">
+            <h2>To-Do Tasks   <a  class="text-success" href="{% url 'task-create' %}">{% bootstrap_icon "plus" %}</a></h2>
+            <div class="row">
+                {% for task in tasks %}
+                {% if not task.done  %}
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+                        <div class="panel-heading"><h4>{{task.name}}
+                                <span><a class="text-warning" href="{% url 'task-update' event.id task.id %}"> {% bootstrap_icon "pencil" %}</a></span>
+                                <span><a class="text-success "  href="{% url 'task-complete' event.id task.id %}">{% bootstrap_icon "ok" %}</a></span>
+                        </h4>
+                        </div>
+                        <div class="panel-body">
+                            <p>Priority:
+                                {% if task.priority.name == 'URGENT' %}
+                                <span class="label label-danger">{{task.priority}}</span>
+                                {% endif %}
+                                {% if task.priority.name == 'LOW' %}
+                                <span class="label label-success">{{task.priority}}</span>
+                                {% endif %}
+                                {% if task.priority.name == 'NORMAL' %}
+                                <span class="label label-warning">{{task.priority}}</span>
+                                {% endif %}
+                            </p>
+    
+                          <p>{% bootstrap_icon "calendar" %} {{ task.reminder }}</p> 
+                            
+                        </div>
+                        <div class="panel-footer">
+                            <small>Author: {{ task.user }}</small>
+                                
+                        </div>
+                    </div>  
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+            <div class="col-md-12">
+                <div class="row">
+                        <h2>Completed tasks</h2>
+                        {% for task in tasks %}
+                        {% if task.done  %}
+                        <div class="col-md-3">
+                            <div class="panel panel-default">
+                                <div class="panel-heading"><h4>{{task.name}}
+                                        <span><a class="text-success "  href="{% url 'task-complete' event.id task.id %}">{% bootstrap_icon "repeat" %}</a></span>
+
+                                </h4>
+    
+                                </div>
+                                <div class="panel-body">
+                                    <p>Priority:                                   
+                                        {% if task.priority.name == 'URGENT' %}
+                                            <span class="label label-danger">{{task.priority}}</span>
+                                            {% endif %}
+                                            {% if task.priority.name == 'LOW' %}
+                                            <span class="label label-success">{{task.priority}}</span>
+                                            {% endif %}
+                                            {% if task.priority.name == 'NORMAL' %}
+                                            <span class="label label-warning">{{task.priority}}</span>
+                                            {% endif %}</p>
+                                <small class="text-muted">Completed on: {{ task.done }} </small>      
+                                </div>
+                                <div class="panel-footer">
+                                    <span><a class="text-danger" href="{% url 'task-delete' event.id task.id %}"> {% bootstrap_icon "trash" %}</a></span>
+                                </div>
+                            </div>  
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                </div>
+    
+                </div>
+    
+    </div>
+
+            
+{% endblock %}
