@@ -6,9 +6,9 @@ with open("/Users/julian.rofrano/eventbrite/todolisteb/todolist/events/res.json"
     data = json.load(read_file)
 
 
-class TestApiUtils(TestCase):
+# class TestApiUtils(TestCase):
     
-    @patch('events.utils.Eventbrite.get', return_value=data)    
-    def test_get_events(self, res):
-        events = get_api_events('sdkasopdkasod')
-        self.assertEqual(events, res)
+#     @patch('events.utils.Eventbrite.get', return_value=data)    
+#     def test_get_events(self, res):
+#         events = get_api_events('sdkasopdkasod')
+#         self.assertEqual(events, res)

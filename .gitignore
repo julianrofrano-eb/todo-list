@@ -110,5 +110,5 @@ venv.bak/
 k.sh
 
 #bower
-bower_components/
+bower_components/g
 coponents/
