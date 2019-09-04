@@ -108,3 +108,7 @@ venv.bak/
 
 # k.sh activator with env vars
 k.sh
+
+#bower
+bower_components/
+coponents/
